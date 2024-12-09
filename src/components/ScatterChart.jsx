@@ -1,5 +1,5 @@
 import React from 'react';
-import ChartComponent from './ChartComponent';
+import ChartComponent from './ChartComponent.jsx';
 const ScatterChart = ({ data }) => {
   const chartData = {
     labels: data.map((item) => item.month),
