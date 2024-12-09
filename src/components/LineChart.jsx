@@ -1,26 +1,21 @@
 import React from 'react';
 import ChartComponent from './ChartComponent.jsx';
 const LineChart = ({ data }) => {
-  const chartData = {
-    labels: data.map((item) => item.month),
-    datasets: [{
-      label: 'Monthly Profits',
-      data: data.map((item) => item.profits),
-      backgroundColor: 'rgba(54, 162, 235, 0.2)',
-      borderColor: 'rgba(54, 162, 235, 1)',
-      borderWidth: 1
-}]};
-  const options = {
-    title: {
-    display: true,
-    text: 'Monthly Profits'
-    },
+    const lineChartData = {
+    labels: data.months,
+    datasets: [
+{
+    label: 'Monthly Profits',
+    data: data.profits, 
+    backgroundColor: 'rgba(53, 20, 130, 0.2)', 
+    borderColor: 'rgba(75, 192, 192, 1)',
+    borderWidth: 1,
+ },],};
+    const lineChartOptions = {
     scales: {
-    yAxes: [{
-    ticks: {
-    beginAtZero: true
-}}]}};
-  return (
-    <ChartComponent type="Line" data={chartData} options={options} />
-);};
-export default LineChart;
+        y: {
+    beginAtZero: true,
+},},};
+return <ChartComponent type="line" data={lineChartData} options={lineChartOptions} />;
+};
+ export default LineChart
